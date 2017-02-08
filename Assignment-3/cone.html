@@ -9,7 +9,12 @@
 <body>
   <canvas id="webgl-canvas" width="512" height="512" style="background-color: #0000FF"></canvas>
   function Cone-vertex-shader{
-  
+  attribute vec4 vPosition;
+
+  void main() 
+  {
+      gl_Position = vPosition;
+  }
   }
 </body>
 </html>
