@@ -5,9 +5,6 @@
   <script src="../Common/initShaders.js"></script>
   <script src="../Common/Cone.js"></script>
   <script src="cone.js"></script> 
-</head>
-<body>
-  <canvas id="webgl-canvas" width="512" height="512" style="background-color: #0000FF">
   function Cone-vertex-shader{
    attribute vec4 vPosition;
 
@@ -15,6 +12,13 @@
         gl_Position = vPosition;
     }
   }
-  </canvas>
+  function Cone-fragment-shader{
+    void main(){
+    gl_FragColor = vec4(1.0, 0.0, 0.0, 1.0);
+    }
+  }
+</head>
+<body>
+  <canvas id="webgl-canvas" width="512" height="512" style="background-color: #0000FF"></canvas>
 </body>
 </html>
