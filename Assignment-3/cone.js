@@ -1,11 +1,13 @@
 var cone = null;
 
 function init() {
-    var canvas = document.getElementById( "webgl-canvas" );
+    var cone 
+    var fgShader = utils.getShader(gl, 'shader-fs');
+    var vxShader = utils.getShader(gl, 'shader-vs');
     
     cone = New Cone( n );
 
-    gl = WebGLUtils.setupWebGL( canvas );
+    gl = WebGLUtils.setupWebGL( cone );
 
     if ( !gl ) {
         alert("Unable to setup WebGL");
