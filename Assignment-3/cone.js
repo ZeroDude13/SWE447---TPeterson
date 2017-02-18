@@ -3,8 +3,6 @@ var cone = null;
 function init() {
     cone = New Cone( n );
 
-    gl = WebGLUtils.setupWebGL( cone );
-
     if ( !gl ) {
         alert("Unable to setup WebGL");
         return;
