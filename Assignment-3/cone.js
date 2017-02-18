@@ -1,10 +1,6 @@
 var cone = null;
 
 function init() {
-    var cone 
-    var fgShader = utils.getShader(gl, 'shader-fs');
-    var vxShader = utils.getShader(gl, 'shader-vs');
-    
     cone = New Cone( n );
 
     gl = WebGLUtils.setupWebGL( cone );
