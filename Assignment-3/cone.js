@@ -2,7 +2,7 @@ var gl = null;
 var cone = null;
 
 function init() {
-    cone = New Cone( gl, 10 );
+    cone = new Cone( gl, 10 );
 
     if ( !gl ) {
         alert("Unable to setup WebGL");
