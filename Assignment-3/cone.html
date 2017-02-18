@@ -5,20 +5,18 @@
   <script src="../Common/initShaders.js"></script>
   <script src="../Common/Cone.js"></script>
   <script src="cone.js"></script>
-  <script>
-  function Cone-vertex-shader{
+  <script id="Cone-vertex-shader" type="x-shader/x-vertex">
    attribute vec4 vPosition;
 
     void main(){
         gl_PointSize = 5.0;
         gl_Position = vPosition;
     }
-  };
-  function Cone-fragment-shader{
+  </script>
+  <script id="Cone-fragment-shader" type="y-shader/y-vertex">
     void main(){
     gl_FragColor = vec4(1.0, 0.0, 0.0, 1.0);
     }
-  };
   </script>
 </head>
 <body>
