@@ -159,28 +159,32 @@ function render() {
   ms.push();
   ms.rotate(1, axis);
   ms.scale(planet.radius);
-  gl.useProgram(planet.program);
-  gl.uniformMatrix4fv(planet.uniforms.MV, false, flatten(ms.current()));
-  gl.uniformMatrix4fv(planet.uniforms.P, false, flatten(P));
-  gl.uniform4fv(planet.uniforms.color, flatten(data.color));
+  //gl.useProgram(planet.program);
+  //gl.uniformMatrix4fv(planet.uniforms.MV, false, flatten(ms.current()));
+  //gl.uniformMatrix4fv(planet.uniforms.P, false, flatten(P));
+  //gl.uniform4fv(planet.uniforms.color, flatten(data.color));
   planet.render();
   ms.pop();
+  ms.translate(Moon.distance, 0, 0);
+  ms.scale(Moon.radius);
+  Moon.render();
+  ms.pop()
   
-  name = "Moon";
-  planet = Planets[name];
-  data = SolarSystem[name];
+  //name = "Moon";
+  //planet = Planets[name];
+  //data = SolarSystem[name];
   
-  planet.PointMode = false;
+  //planet.PointMode = false;
   
-  ms.push();
-  ms.translate(planet.distance, 0, 0);
-  ms.scale(planet.radius);
-  gl.useProgram(planet.program);
-  gl.uniformMatrix4fv(planet.uniforms.MV, false, flatten(ms.current()));
-  gl.uniformMatrix4fv(planet.uniforms.P, false, flatten(P));
-  gl.uniform4fv(planet.uniforms.color, flatten(data.color));
-  planet.render();
-  ms.pop();
+  //ms.push();
+  //ms.translate(planet.distance, 0, 0);
+  //ms.scale(planet.radius);
+  //gl.useProgram(planet.program);
+  //gl.uniformMatrix4fv(planet.uniforms.MV, false, flatten(ms.current()));
+  //gl.uniformMatrix4fv(planet.uniforms.P, false, flatten(P));
+  //gl.uniform4fv(planet.uniforms.color, flatten(data.color));
+  //planet.render();
+  //ms.pop();
   
   window.requestAnimationFrame(render);
 }
