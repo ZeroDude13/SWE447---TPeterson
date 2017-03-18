@@ -20,8 +20,8 @@ var Planets = {
   Sun : undefined,
   // Mercury : undefined,
   // Venus : undefined,
-  // Earth : undefined,
-  // Moon : undefined,
+  Earth : undefined,
+  Moon : undefined,
   // Mars : undefined,
   // Jupiter : undefined,
   // Saturn : undefined,
@@ -146,7 +146,42 @@ function render() {
   //
   //  Add your code for more planets here!
   //
+  
+  name = "Earth";
+  planet = Planets[name];
+  data = SolarSystem[name];
+  
+  planet.PointMode = false;
 
+  ms.push();
+  ms.rotate(year, axis);
+  ms.translate(planet.distance, 0, 0);
+  ms.push();
+  ms.rotate(day, axis);
+  ms.scale(data.radius);
+  gl.useProgram(planet.program);
+  gl.uniformMatrix4fv(planet.uniforms.MV, false, flatten(ms.current()));
+  gl.uniformMatrix4fv(planet.uniforms.P, false, flatten(P));
+  gl.uniform4fv(planet.uniforms.color, flatten(data.color));
+  planet.render();
+  ms.pop();
+  
+  name = "Moon";
+  planet = Planets[name];
+  data = SolarSystem[name];
+  
+  planet.PointMode = false;
+  
+  ms.push();
+  ms.translate(planet.distance, 0, 0);
+  ms.scale(data.radius);
+  gl.useProgram(planet.program);
+  gl.uniformMatrix4fv(planet.uniforms.MV, false, flatten(ms.current()));
+  gl.uniformMatrix4fv(planet.uniforms.P, false, flatten(P));
+  gl.uniform4fv(planet.uniforms.color, flatten(data.color));
+  planet.render();
+  ms.pop();
+  
   window.requestAnimationFrame(render);
 }
 
