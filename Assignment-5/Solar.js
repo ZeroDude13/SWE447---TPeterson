@@ -155,15 +155,15 @@ function render() {
 
   ms.push();
   ms.rotate(year, axis);
-  ms.translate(planet.distance, 0, 0);
+  ms.translate(Earth.distance, 0, 0);
   ms.push();
   ms.rotate(day, axis);
-  ms.scale(data.radius);
-  gl.useProgram(planet.program);
-  gl.uniformMatrix4fv(planet.uniforms.MV, false, flatten(ms.current()));
-  gl.uniformMatrix4fv(planet.uniforms.P, false, flatten(P));
-  gl.uniform4fv(planet.uniforms.color, flatten(data.color));
-  planet.render();
+  ms.scale(Earth.radius);
+  gl.useProgram(Earth.program);
+  gl.uniformMatrix4fv(Earth.uniforms.MV, false, flatten(ms.current()));
+  gl.uniformMatrix4fv(Earth.uniforms.P, false, flatten(P));
+  gl.uniform4fv(Earth.uniforms.color, flatten(data.color));
+  Earth.render();
   ms.pop();
   
   name = "Moon";
@@ -173,13 +173,13 @@ function render() {
   planet.PointMode = false;
   
   ms.push();
-  ms.translate(planet.distance, 0, 0);
-  ms.scale(data.radius);
-  gl.useProgram(planet.program);
-  gl.uniformMatrix4fv(planet.uniforms.MV, false, flatten(ms.current()));
-  gl.uniformMatrix4fv(planet.uniforms.P, false, flatten(P));
-  gl.uniform4fv(planet.uniforms.color, flatten(data.color));
-  planet.render();
+  ms.translate(Moon.distance, 0, 0);
+  ms.scale(Moon.radius);
+  gl.useProgram(Moon.program);
+  gl.uniformMatrix4fv(Moon.uniforms.MV, false, flatten(ms.current()));
+  gl.uniformMatrix4fv(Moon.uniforms.P, false, flatten(P));
+  gl.uniform4fv(Moon.uniforms.color, flatten(data.color));
+  Moon.render();
   ms.pop();
   
   window.requestAnimationFrame(render);
