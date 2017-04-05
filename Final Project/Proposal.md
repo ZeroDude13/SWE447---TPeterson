@@ -1,4 +1,4 @@
-<b>Overview of Project</b>
+<b>Overview of Project</b> endl;
 -My Project will be an image of a dragon breathing fire. The dragon itself is stationary while it’s breath is constantly moving in a loop.
 
 Steps to Complete Project
