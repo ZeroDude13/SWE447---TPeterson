@@ -24,14 +24,9 @@
 <body>
 
     <script>
-        // You can put all the example code in a separate file or just add it here for simplicity.
-        // Also no ES6 today, so we don't need a build setup ;)
-        // The detector will show a warning if the current browser does not support WebGL.
         if (!Detector.webgl) {
             Detector.addGetWebGLMessage();
         }
-
-        // All of these variables will be needed later, just ignore them for now.
         var container;
         var camera, controls, scene, renderer;
         var lighting, ambient, keyLight, fillLight, backLight;
@@ -44,7 +39,6 @@
         function init() {
             container = document.createElement('div');
             document.body.appendChild(container);
-            // Code...
             camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 1000);
             camera.position.z = 3;
             scene = new THREE.Scene();
@@ -63,8 +57,8 @@
             scene.add(fillLight);
             scene.add(backLight);
             var mtlLoader = new THREE.MTLLoader();
-            mtlLoader.setBaseUrl('assets/');
-            mtlLoader.setPath('assets/');
+            mtlLoader.setBaseUrl('Dragon/');
+            mtlLoader.setPath('Dragon/');
             mtlLoader.load('female-croupier-2013-03-26.mtl', function (materials) {
 
                 materials.preload();
@@ -74,7 +68,7 @@
 
                 var objLoader = new THREE.OBJLoader();
                 objLoader.setMaterials(materials);
-                objLoader.setPath('assets/');
+                objLoader.setPath('Dragon/');
                 objLoader.load('female-croupier-2013-03-26.obj', function (object) {
 
                     scene.add(object);
@@ -95,7 +89,6 @@
         }
 
         function render() {
-            // Code...
             requestAnimationFrame(render);
             controls.update();
             renderer.render(scene, camera);
